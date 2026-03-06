@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  justify-content: center;
+  padding: 50px;
+}
+
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  margin-bottom: 15px;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+#status {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#problemList {
+  list-style: none;
+  padding-left: 0;
+}
+
+#problemList li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#problem, #solution {
+    text-align: center;
+}
