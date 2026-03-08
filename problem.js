@@ -26,7 +26,7 @@ async function loadProblem() {
 
   try {
     // Fetch only title and statement (tags optional) from backend
-    const res = await fetch(`https://project-teuwler-endpoints.vercel.app/api/problems?id=${problemId}`);
+    const res = await fetch(`https://project-teuwler-endpoints.vercel.app/api/problem?id=${problemId}`);
     if (!res.ok) throw new Error("Failed to fetch problem");
 
     const data = await res.json();
