@@ -39,7 +39,7 @@ async function loadProblem() {
 
     nameEl.textContent = data.title || `Problem ${problemId}`;
 
-    problemEl.innerHTML = marked.parse(data.statement || "No statement provided.");
+    problemEl.innerHTML = marked.parse(data.mdx || "No statement provided.");
     // render math inside problem
     renderMathInElement(problemEl, {
       throwOnError: false,
