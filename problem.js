@@ -1,3 +1,7 @@
+// fetch specific problem from database at start
+// fetch answer or send answer to firebase to have it check for correctness
+// if correct receive object with solution data and show it, if incorrect send that
+
 const nameEl = document.getElementById("name");
 const problemEl = document.getElementById("problem");
 const answerInput = document.getElementById("answer");
@@ -21,6 +25,7 @@ async function loadProblem() {
   }
 
   try {
+    // Fetch only title and statement (tags optional) from backend
     const res = await fetch(`https://project-teuwler-endpoints.vercel.app/api/problem?id=${problemId}`);
     if (!res.ok) throw new Error("Failed to fetch problem");
 
@@ -33,7 +38,21 @@ async function loadProblem() {
     }
 
     nameEl.textContent = data.title || `Problem ${problemId}`;
-    problemEl.textContent = data.statement || "No statement provided.";
+
+    problemEl.innerHTML = marked.parse(data.statement || "No statement provided.");
+    // render math inside problem
+    renderMathInElement(problemEl, {
+      throwOnError: false,
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ]
+    });
+
+    // highlight code blocks
+    problemEl.querySelectorAll("pre code").forEach(hljs.highlightElement);
+
+
     checkBtn.disabled = false;
 
   } catch (err) {
@@ -44,6 +63,7 @@ async function loadProblem() {
   }
 }
 
+// When check button is clicked
 async function checkAnswer() {
   const problemId = getProblemIdFromUrl();
   if (!problemId) return;
@@ -68,13 +88,23 @@ async function checkAnswer() {
 
     if (result.correct) {
       // Show solution if correct
-      solutionEl.textContent = result.solutionMDX || "Solution not available";
+      solutionEl.innerHTML = marked.parse(result.solutionMDX || "Solution not available");
+      // render math inside solution
+      renderMathInElement(solutionEl, {
+        throwOnError: false,
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ]
+      });
+      // highlight code blocks
+      solutionEl.querySelectorAll("pre code").forEach(hljs.highlightElement);
+
       alert("Correct!");
     } else {
       solutionEl.textContent = "";
       alert(result.message || "Incorrect, try again.");
     }
-
   } catch (err) {
     console.error("Error checking answer:", err);
     alert("Error checking answer. See console.");
