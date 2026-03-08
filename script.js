@@ -15,7 +15,7 @@ async function loadProblems() {
       const a = document.createElement("a");
 
       a.textContent = `#${id}: ${title}`;
-      a.href = `/problems?problem=${id}`;
+      a.href = `./problems?problem=${id}`;
 
       li.appendChild(a);
       li.append(` [${tags.join(", ")}]`);
