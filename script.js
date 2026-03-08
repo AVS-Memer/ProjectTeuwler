@@ -14,10 +14,11 @@ async function loadProblems() {
       const li = document.createElement("li");
       const a = document.createElement("a");
 
-      a.textContent = `#${id} — ${title} [${tags.join(", ")}]`;
+      a.textContent = `#${id}: ${title}`;
       a.href = `/problems?problem=${id}`;
 
       li.appendChild(a);
+      li.append(` [${tags.join(", ")}]`);
       fragment.appendChild(li);
     });
 
