@@ -49,10 +49,6 @@ async function loadProblem() {
       ]
     });
 
-    // highlight code blocks
-    problemEl.querySelectorAll("pre code").forEach(hljs.highlightElement);
-
-
     checkBtn.disabled = false;
 
   } catch (err) {
@@ -97,8 +93,6 @@ async function checkAnswer() {
           {left: "$", right: "$", display: false}
         ]
       });
-      // highlight code blocks
-      solutionEl.querySelectorAll("pre code").forEach(hljs.highlightElement);
 
       alert("Correct!");
     } else {
