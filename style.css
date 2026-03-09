@@ -40,6 +40,11 @@ input {
   color: #fff;
 }
 
+input::placeholder {
+  color: #f0b800;
+  opacity: 1;
+}
+
 button {
   background: linear-gradient(45deg, #ffc600, #ff7200);
   color: white;
