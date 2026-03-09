@@ -96,6 +96,7 @@ async function checkAnswer() {
 
       alert("Correct!");
     } else {
+      answerInput.value = "";
       solutionEl.textContent = "";
       alert(result.message || "Incorrect, try again.");
     }
