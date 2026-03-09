@@ -7,11 +7,10 @@ html, body {
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #1a0a0a 0%, #3a1b1b 100%);
+  background-attachment: fixed;
+  background-size: cover;
   color: #e0e0e0;
   padding: 50px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100%;
 }
 
 .container {
