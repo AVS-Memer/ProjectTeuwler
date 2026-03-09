@@ -36,7 +36,7 @@ input, button {
 }
 
 input {
-  background: #2a2a3a;
+  background: linear-gradient(5deg, #b77209, #a33a0c);
   color: #fff;
 }
 
@@ -94,11 +94,11 @@ button:hover {
   background: linear-gradient(to right, #5a3a3a, #734040);
 }
 
-#problemList a {
+a {
   color: #ffc600;
   text-decoration: none;
 }
 
-#problemList a:hover {
+a:hover {
   text-decoration: underline;
 }
