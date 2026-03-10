@@ -1,5 +1,5 @@
 const problemList = document.getElementById("problemList");
-const container = document.getElementById("pageContainer");
+const container = document.getElementById("container");
 // Fetch problems from your backend
 async function loadProblems() {
   try {
@@ -36,6 +36,7 @@ async function loadProblems() {
     });
 
     problemList.appendChild(fragment);
+    container.style.paddingBottom = "50px";
   } catch (error) {
     console.error("Error loading problems:", error);
     problemList.textContent = "Failed to load problems.";
