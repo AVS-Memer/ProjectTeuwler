@@ -13,10 +13,6 @@ body {
   min-height: 100vh;
 }
 
-#container {
-  padding-bottom: 50px;
-}
-
 h1, h2 {
   margin-bottom: 15px;
   color: #ffffff;
