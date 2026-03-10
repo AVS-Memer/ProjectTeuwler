@@ -36,6 +36,7 @@ async function loadProblems() {
     });
 
     problemList.appendChild(fragment);
+    document.body.style.minHeight = document.body.scrollHeight + "px";
     document.body.style.background = "linear-gradient(135deg, #1a0a0a 0%, #3a1b1b 100%)";
     container.style.padding = "50px";
   } catch (error) {
