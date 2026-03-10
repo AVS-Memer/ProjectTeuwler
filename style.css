@@ -11,6 +11,7 @@ body {
   color: #e0e0e0;
   min-height: 100vh;
   padding: 50px;
+  padding-top: 30px;
 }
 
 #container {
