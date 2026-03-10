@@ -36,7 +36,7 @@ async function loadProblems() {
     });
 
     problemList.appendChild(fragment);
-    container.style.paddingBottom = "50px";
+    container.style.padding = "50px";
   } catch (error) {
     console.error("Error loading problems:", error);
     problemList.textContent = "Failed to load problems.";
