@@ -58,7 +58,7 @@ button:hover {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  background: n;
+  background: linear-gradient(175deg, #1f1f26 0%, #3f1f1f 100%);
   color: #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
